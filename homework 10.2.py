@@ -14,6 +14,8 @@ class Knight(threading.Thread):
         while rivals > 0:
             rivals -= self.power
             day += 1
+            if rivals < self.power:
+                rivals = 0
             time.sleep(1)
             print(f"{self.name} сражается {day} день(дня), осталось {rivals} воинов.")
         else:
